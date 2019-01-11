@@ -75,6 +75,10 @@ So to use the Serial, we need have 2 possibility:
 
 The main difference is that with the ATtinyCore SoftwareSerial you can use the "pin change interrupts" (PCINT), in the normal SoftwareSerial you can't.  
 
+I will use the watchdog time to wake-up the tiny85.
+
+![power_consumption](watchdog.png)  
+
 
  ### Standard SoftwareSerial
 ```
