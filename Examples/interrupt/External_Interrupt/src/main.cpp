@@ -36,6 +36,11 @@ ISR (PCINT0_vect){
 // ========== sleepMode
 //
 void sleepMode() {
+        // Turn off ADC
+        // You must use the PRR after setting ADCSRA to zero,
+        // otherwise the ADC is "frozen" in an active state.
+        ADCSRA = 0; // turn off ADC
+        
         // disable all interrupts (including timer interrupts, serial interrupts, etc.)
         // clear interrupts flag, equal to cli
         noInterrupts (); // make sure we don't get interrupted before we sleep
